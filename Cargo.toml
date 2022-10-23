@@ -1,6 +1,7 @@
 [workspace]
 
 members = [
-    "smartpointer"
+    "smartpointer",
+    "fearlessconcurrency"
 ]
 
