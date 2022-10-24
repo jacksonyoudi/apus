@@ -7,5 +7,9 @@ name = "fearlessconcurrency"
 version = "0.1.0"
 
 [[package]]
+name = "oop"
+version = "0.1.0"
+
+[[package]]
 name = "smartpointer"
 version = "0.1.0"
