@@ -3,11 +3,11 @@
 version = 3
 
 [[package]]
-name = "fearlessconcurrency"
+name = "designpatterns"
 version = "0.1.0"
 
 [[package]]
-name = "oop"
+name = "fearlessconcurrency"
 version = "0.1.0"
 
 [[package]]

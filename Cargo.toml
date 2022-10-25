@@ -3,6 +3,6 @@
 members = [
     "smartpointer",
     "fearlessconcurrency",
-    "oop"
+    "designpatterns"
 ]
 
