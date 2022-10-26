@@ -7,5 +7,6 @@ members = [
     "patternmatching",
     "variables",
     "ownership",
+    "compoundtype"
 ]
 

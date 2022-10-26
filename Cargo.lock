@@ -3,6 +3,10 @@
 version = 3
 
 [[package]]
+name = "compoundtype"
+version = "0.1.0"
+
+[[package]]
 name = "designpatterns"
 version = "0.1.0"
 
