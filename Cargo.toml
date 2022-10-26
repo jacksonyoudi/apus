@@ -4,6 +4,8 @@ members = [
     "smartpointer",
     "fearlessconcurrency",
     "designpatterns",
-    "patternmatching"
+    "patternmatching",
+    "variables",
+    "ownership",
 ]
 
