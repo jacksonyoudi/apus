@@ -27,5 +27,9 @@ name = "smartpointer"
 version = "0.1.0"
 
 [[package]]
+name = "traitgeneric"
+version = "0.1.0"
+
+[[package]]
 name = "variables"
 version = "0.1.0"
