@@ -15,8 +15,15 @@ name = "fearlessconcurrency"
 version = "0.1.0"
 
 [[package]]
+name = "macroadvance"
+version = "0.1.0"
+
+[[package]]
 name = "ownership"
 version = "0.1.0"
+dependencies = [
+ "macroadvance",
+]
 
 [[package]]
 name = "patternmatching"

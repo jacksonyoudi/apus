@@ -31,7 +31,13 @@ fn main() {
     notify(&post);
 
     let i: u16 = 100;
-    let x1 = i.try_into().unwrap();
+    let x1: i32 = i.try_into().unwrap();
+
+
+    let i1: i32 = 5;
+    let i2: Kilometers = 5;
+
+    println!("{}", i1 + i2);
 }
 
 struct Point<T> {
@@ -119,6 +125,8 @@ pub fn some_function_one<T, U>(t: &T, u: &U)
 {
     todo!()
 }
+
+type Kilometers = i32;
 
 
 
