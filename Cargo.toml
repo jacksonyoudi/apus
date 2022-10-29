@@ -9,6 +9,7 @@ members = [
     "ownership",
     "compoundtype",
     "traitgeneric",
-    "macroadvance"
+    "macroadvance",
+    "guess"
 ]
 
