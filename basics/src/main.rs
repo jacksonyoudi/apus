@@ -1,0 +1,58 @@
+const MAX_POINTS: i32 = 100_000;
+
+fn main() {
+    println!("{}", MAX_POINTS);
+    println!("Hello, world!");
+
+    let x: u32 = "42".parse().expect("Not a number!!");
+
+    let i: i32 = "42".parse::<i32>().expect("not a number");
+
+
+    let x1: (i32, f64, i32) = (500, 6.4, 1);
+    println!("{} {} {}", x1.0, x1.1, x1.2);
+
+    let x2: [i32; 5] = [3; 5];
+
+    println!("{}", x2[0]);
+    println!("{}", x2[1]);
+    println!("{}", x2.get(1).unwrap());
+
+    antother_functions();
+    let x3: [i32; 5] = [1, 2, 3, 4, 5];
+
+    for x in x3.iter() {
+        println!("{}", x);
+    }
+
+    for x in 1..=5 {
+        println!("{}", x);
+    }
+}
+
+fn antother_functions() {
+    println!("antother_functions")
+}
+
+// parameters 形参, arguments 实参
+// 语句与表达式 (statement, )
+// 语句没有返回值
+// 返回值， 不能为返回值命名  表达式
+
+// 注释
+// loop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@ members = [
     "compoundtype",
     "traitgeneric",
     "macroadvance",
-    "guess"
+    "guess",
+    "basics"
 ]
 
