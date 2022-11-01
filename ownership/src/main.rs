@@ -7,9 +7,6 @@ fn main() {
     println!("{:?}", x);
 
     println!("Hello, world!");
-
-
-
 }
 
 
@@ -24,3 +21,26 @@ fn first_word(s: &String) -> usize {
     }
     s.len()
 }
+
+
+#[derive(Debug, PartialEq)]
+struct Point<T> {
+    x: T,
+    y: T,
+}
+
+// 单态化
+// 静态分发
+impl<T> Point<T> {
+    fn new(x: T, y: T) -> Point<T> {
+        Point { x, y }
+    }
+}
+
+
+// 单态化静态分发的好处是性能好，没有运行时开销；缺点是容易造成编译后生成的二进制文件膨胀。
+
+
+
+
+

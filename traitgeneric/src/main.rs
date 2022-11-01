@@ -129,6 +129,59 @@ pub fn some_function_one<T, U>(t: &T, u: &U)
 type Kilometers = i32;
 
 
+trait Add<RHS, Output> {
+    fn add(&self, rhs: RHS) -> Output;
+}
+
+
+impl Add<i32, i32> for i32 {
+    fn add(self, rhs: i32) -> i32 {
+        *self + rhs
+    }
+}
+
+
+impl Add<u32, u32> for u32 {
+    fn add(&self, rhs: u32) -> u32 {
+        *self + rhs
+    }
+}
+
+
+trait Page {
+    fn set_page(&self, page: i32) {
+        println!("{}", 1);
+    }
+}
+
+trait PerPage {
+    fn set_per_page(&self, num: i32) {
+        println!("{}", 10)
+    }
+}
+
+
+struct MyPaginate {
+    page: i32,
+}
+
+impl Page for MyPaginate {}
+
+impl PerPage for MyPaginate {}
+
+
+trait Paginate: T
+    where T: Page + PerPage
+{
+    fn set_skip_page(&self, num: i32) {
+        println!("Skip Page {:?}", num)
+    }
+}
+
+impl<T> Paginate for T
+    where T: Page + PerPage
+{}
+
 
 
 
