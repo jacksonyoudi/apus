@@ -90,9 +90,6 @@ enum PokerSuit {
 let heart = PokerSuit::Hearts;
 let diamond = PokerSuit::Diamonds;
 
-
-
-
 ```
 
 

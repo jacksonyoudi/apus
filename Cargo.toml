@@ -7,6 +7,10 @@ members = [
     "patternmatching",
     "variables",
     "ownership",
-    "compoundtype"
+    "compoundtype",
+    "traitgeneric",
+    "macroadvance",
+    "guess",
+    "basics"
 ]
 
