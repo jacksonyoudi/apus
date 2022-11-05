@@ -105,6 +105,12 @@ fn hello() {
 }
 
 
+type MathOp = fn(i32, i32) -> i32;
+
+fn ma(op: MathOp, a: i32, b: i32) -> i32 {
+    println!("{:p}", op);
+    op(a, b)
+}
 
 
 
