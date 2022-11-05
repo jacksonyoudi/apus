@@ -19,6 +19,13 @@ fn main() {
     let b: A = a;
 
     println!("{:?}", a);
+
+    let (a, b): (i32, i32) = (2, 3);
+
+    assert_eq!(math(sum, a, b), 5);
+
+    let x1: fn() = hello;
+    println!("{:p}", x1);
 }
 
 
@@ -69,6 +76,34 @@ struct A {
     a: u32,
     b: u32,
 }
+
+
+// 函数 gcd 使用欧几里得算法（辗转相除法）求两数中的最大公约数。
+// 如果a%b的余数不为0，则将b和a相互置换，将余数作为b的值，
+// 继续递归求值；如果余数为0，则提前返回a。
+// 其实此例中如果gcd函数使用if-else条件分支，阅读性会更好一些
+fn gcd(a: u32, b: u32) -> u32 {
+    if b == 0 {
+        return a;
+    }
+    return gcd(b, a % b);
+}
+
+
+fn math(op: fn(i32, i32) -> i32, a: i32, b: i32) -> i32 {
+    op(a, b)
+}
+
+fn sum(a: i32, b: i32) -> i32 {
+    a + b
+}
+
+
+// 函数指针
+fn hello() {
+    println!("hello");
+}
+
 
 
 
