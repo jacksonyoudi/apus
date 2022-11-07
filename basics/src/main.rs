@@ -28,6 +28,11 @@ fn main() {
     for x in 1..=5 {
         println!("{}", x);
     }
+
+    let x4: Vec<u32> = vec![1, 2, 3];
+    let x5: bool = x4.any(|x| x == 3);
+
+    println!("{}", x5);
 }
 
 fn antother_functions() {
@@ -43,16 +48,19 @@ fn antother_functions() {
 // loop
 
 
+trait Any {
+    fn any<F>(&self, f: F) -> bool
+        where Self: Sized,
+              F: Fn(u32) -> bool;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+impl Any for Vec<u32> {
+    fn any<F>(&self, f: F) -> bool where Self: Sized, F: Fn(u32) -> bool {
+        for &x in self {
+            if f(x) {
+                return true;
+            }
+        }
+        false
+    }
+}

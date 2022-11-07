@@ -12,6 +12,7 @@ members = [
     "macroadvance",
     "guess",
     "basics",
-    "closuring"
+    "closuring",
+    "iteratoring"
 ]
 
