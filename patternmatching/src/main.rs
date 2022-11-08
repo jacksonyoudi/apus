@@ -32,7 +32,7 @@ fn main() {
     println!("{:?}", book);
     println!("{:?}", book1);
 
-    let x: ColoredString = "hello".red().on_yellow();
+    let x: ColoredString = "hello".blue().on_yellow();
     println!("{}", x)
 }
 // -- this field does not implement `Copy`

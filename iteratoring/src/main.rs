@@ -6,6 +6,14 @@ fn main() {
     println!("{}", counter.next().unwrap());
 }
 
+enum Color {
+    Red,
+    Yellow,
+    Blue,
+}
+
+
+
 
 // trait InIterator<T: Copy> {
 //     fn each<F: Fn(T) -> T>(&mut self, f: F);
@@ -28,7 +36,7 @@ struct Counter {
 }
 
 
-impl  Iterator for Counter {
+impl Iterator for Counter {
     type Item = usize;
 
     fn next(&mut self) -> Option<Self::Item> {
