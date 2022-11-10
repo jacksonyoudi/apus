@@ -1,5 +1,7 @@
 mod blog;
 
+use crate::blog::post::Post;
+
 fn main() {
     let mut post = Post::new();
 
