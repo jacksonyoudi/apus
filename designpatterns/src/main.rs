@@ -4,6 +4,8 @@ mod graph;
 // use crate::blog::post::Post;
 use crate::graph::{Circle, CircleBuilder};
 
+use std::process::Command;
+
 fn main() {
     {
         // let mut post = Post::new();
@@ -30,4 +32,13 @@ fn main() {
     println!("{}", circle.area());
     assert_eq!(circle.x, 1.0);
     assert_eq!(circle.y, 2.0);
+
+    // Command::new("ls")
+    //     .args("-l")
+    //     .args("-a")
+    //     .spawn()
+    //     .expect("ls command failed to start");
+
+
+
 }
