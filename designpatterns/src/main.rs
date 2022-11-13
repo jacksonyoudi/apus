@@ -1,5 +1,6 @@
 mod blog;
 mod graph;
+mod letters;
 
 // use crate::blog::post::Post;
 use crate::graph::{Circle, CircleBuilder};
