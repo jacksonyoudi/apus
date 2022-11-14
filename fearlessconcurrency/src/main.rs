@@ -1,6 +1,11 @@
+extern crate core;
+
+use std::borrow::BorrowMut;
+use std::cell::RefCell;
+use std::panic;
 #[warn(unused_imports)]
 use std::thread;
-use std::thread::JoinHandle;
+use std::thread::{Builder, current, JoinHandle};
 use std::time::Duration;
 
 fn main() {
@@ -22,24 +27,70 @@ fn main() {
         // handle.join().unwrap();
     }
 
-    let x: PrintDrop = PrintDrop("x");
-    let y: PrintDrop = PrintDrop("y");
+    {
+        // let x: PrintDrop = PrintDrop("x");
+        // let y: PrintDrop = PrintDrop("y");
+        //
+        // let mut v = vec![];
+        //
+        // for id in 1..5 {
+        //     let child = thread::spawn(move || {
+        //         println!("in child: {}", id);
+        //     });
+        //     v.push(child)
+        // }
+        //
+        // println!("in main: join before");
+        // for child in v {
+        //     child.join();
+        // }
+        //
+        // println!("in main: join after")
+    }
+
 
     let mut v = vec![];
-
     for id in 1..5 {
-        let child = thread::spawn(move || {
+        let thread_name: String = format!("child-{}", id);
+        let size: usize = 3 * 1024;
+
+        let builder: Builder = Builder::new()
+            .name(thread_name)
+            .stack_size(size);
+        let child = builder.spawn(move || {
             println!("in child: {}", id);
-        });
-        v.push(child)
+            if id == 3 {
+                panic::catch_unwind(|| {
+                    panic!("oh no!")
+                });
+                println!("in {} do sm", current().name().unwrap())
+            }
+        }).unwrap();
+        v.push(child);
     }
-
-    println!("in main: join before");
     for child in v {
-        child.join();
+        child.join().unwrap();
     }
 
-    println!("in main: join after")
+
+    thread_local! {
+        static FOO: RefCell<u32> = RefCell::new(1);
+    }
+
+    FOO.with(|f| {
+        assert_eq!(*f.borrow(), 1);
+        *f.borrow_mut() = 2;
+    });
+    thread::spawn(|| {
+        FOO.with(|f| {
+            assert_eq!(*f.borrow(), 1);
+            *f.borrow_mut() = 3;
+        });
+    });
+
+    FOO.with(|f| {
+        assert_eq!(*f.borrow(), 2);
+    });
 }
 
 //  NewType类型
