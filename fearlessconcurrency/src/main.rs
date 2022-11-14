@@ -24,6 +24,22 @@ fn main() {
 
     let x: PrintDrop = PrintDrop("x");
     let y: PrintDrop = PrintDrop("y");
+
+    let mut v = vec![];
+
+    for id in 1..5 {
+        let child = thread::spawn(move || {
+            println!("in child: {}", id);
+        });
+        v.push(child)
+    }
+
+    println!("in main: join before");
+    for child in v {
+        child.join();
+    }
+
+    println!("in main: join after")
 }
 
 //  NewType类型
