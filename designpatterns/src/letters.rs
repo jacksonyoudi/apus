@@ -32,6 +32,6 @@ pub fn buy_prestamped_envelope() -> Envelope {
 
 impl PickupLorryHandle {
     pub fn pickup(&mut self, envelope: &Envelope) {
-        
+
     }
 }
