@@ -4,7 +4,6 @@ struct MyClosure {
     env_var: u32,
 }
 
-
 // move 语义
 impl FnOnce<()> for MyClosure {
     type Output = u32;
