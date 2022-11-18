@@ -3,12 +3,8 @@ const MAX_POINTS: i32 = 100_000;
 fn main() {
     println!("{}", MAX_POINTS);
     println!("Hello, world!");
-
     let x: u32 = "42".parse().expect("Not a number!!");
-
     let i: i32 = "42".parse::<i32>().expect("not a number");
-
-
     let x1: (i32, f64, i32) = (500, 6.4, 1);
     println!("{} {} {}", x1.0, x1.1, x1.2);
 
