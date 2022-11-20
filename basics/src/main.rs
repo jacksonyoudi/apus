@@ -1,3 +1,7 @@
+use std::sync::{Arc, Barrier};
+use std::thread;
+use std::thread::JoinHandle;
+
 const MAX_POINTS: i32 = 100_000;
 
 fn main() {
@@ -29,6 +33,25 @@ fn main() {
     let x5: bool = x4.any(|x| x == 3);
 
     println!("{}", x5);
+
+
+    let mut handle: Vec<JoinHandle<()>> = Vec::with_capacity(5);
+    let barrier: Arc<Barrier> = Arc::new(std::sync::Barrier::new(5));
+
+
+    for _ in 0..5 {
+        let c: Arc<Barrier> = barrier.clone();
+        handle.push(thread::spawn(move || {
+            println!("before wait");
+            println!("rc:{}", );
+            // 阻塞 直到 barrier.clone() 是5
+            c.wait();
+            println!("after wait");
+        }));
+    }
+    for x in handle {
+        x.join().unwrap();
+    }
 }
 
 fn antother_functions() {
