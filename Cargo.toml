@@ -14,6 +14,8 @@ members = [
     "basics",
     "closuring",
     "iteratoring",
-    "vectortype"
+    "vectortype",
+    "oop",
+    "multithread"
 ]
 
