@@ -1,4 +1,5 @@
 use std::sync::{Arc, Condvar, Mutex, MutexGuard, RwLock, RwLockWriteGuard};
+use std::sync::mpsc::{channel, Receiver, Sender};
 use std::thread;
 
 mod atomicdemo;
@@ -49,7 +50,15 @@ fn main() {
         println!("{}", started);
     }
 
-    atomic_t();
+    // atomic_t();
+
+    let (tx, rx): (Sender<i32>, Receiver<i32>) = channel();
+    thread::spawn(move || {
+        tx.send(10).unwrap();
+    });
+
+
+    assert_eq!(rx.recv().unwrap(), 10);
 }
 
 
