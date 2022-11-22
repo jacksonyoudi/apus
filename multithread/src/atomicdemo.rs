@@ -12,6 +12,7 @@ fn atomic_t() {
 
     while spinlock.load(Ordering::SeqCst) != 0 {}
 
+    
     if let Err(panic) = thread::join() {
         println!("Thread had an error {:?}", panic);
     }
