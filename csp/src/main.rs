@@ -32,4 +32,28 @@ fn main() {
 
     assert_eq!(rx.recv().unwrap(), 1);
     assert_eq!(rx.recv().unwrap(), 2);
+
+    let (tx, rx): (Sender<i32>, Receiver<i32>) = channel();
+    for i in 0..5 {
+        let tx: Sender<i32> = tx.clone();
+        thread::spawn(move || {
+            tx.send(i).unwrap();
+        });
+    }
+
+    drop(tx);
+    for j in rx.iter() {
+        println!("{:?}", j);
+    }
+
+
+    let (tx, rx): (Sender<u8>, Receiver<u8>) = channel();
+    thread::spawn(move || {
+        tx.send(1u8).unwrap();
+        tx.send(2u8).unwrap();
+        tx.send(3u8).unwrap();
+    });
+    for x in rx.iter() {
+        println!("recevive:{}", x);
+    }
 }

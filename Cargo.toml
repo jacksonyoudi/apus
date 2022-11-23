@@ -17,6 +17,8 @@ members = [
     "vectortype",
     "oop",
     "multithread",
-    "generics"
+    "generics",
+    "csp",
+    "pow",
 ]
 
