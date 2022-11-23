@@ -15,6 +15,10 @@ name = "compoundtype"
 version = "0.1.0"
 
 [[package]]
+name = "csp"
+version = "0.1.0"
+
+[[package]]
 name = "designpatterns"
 version = "0.1.0"
 

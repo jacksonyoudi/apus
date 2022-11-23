@@ -16,6 +16,7 @@ members = [
     "iteratoring",
     "vectortype",
     "oop",
-    "multithread"
+    "multithread",
+    "csp"
 ]
 
