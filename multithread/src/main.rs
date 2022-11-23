@@ -1,10 +1,14 @@
+mod atomicdemo;
+mod generatordemo;
+
 use std::sync::{Arc, Condvar, Mutex, MutexGuard, RwLock, RwLockWriteGuard};
 use std::sync::mpsc::{channel, Receiver, Sender};
 use std::thread;
 
-mod atomicdemo;
+use crate::generatordemo::generator_test;
 
 fn main() {
+    generator_test();
     println!("Hello, world!");
 
 

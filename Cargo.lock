@@ -27,8 +27,6 @@ name = "compoundtype"
 version = "0.1.0"
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "crossbeam-channel"
 version = "0.5.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -72,7 +70,6 @@ dependencies = [
 ]
 
 [[package]]
->>>>>>> f274eb170fdec9ad278b422ec99417322e26c96a
 name = "csp"
 version = "0.1.0"
 
