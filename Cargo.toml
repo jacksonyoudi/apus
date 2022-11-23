@@ -20,5 +20,6 @@ members = [
     "generics",
     "csp",
     "pow",
+    "thread_pool"
 ]
 

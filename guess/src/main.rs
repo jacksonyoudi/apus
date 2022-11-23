@@ -5,7 +5,27 @@ use std::time::Duration;
 // prelude
 use rand::Rng; // trait
 
+use rayon::prelude::*;
+
+fn sum_of_squares(input: &[i32]) -> i32 {
+    input.par_iter().map(|&i| i * i).sum()
+}
+
+fn increment_all(input: &mut [i32]) {
+    input.par_iter_mut().for_each(|p| *p += 1);
+}
+
+
 fn main() {
+    let v = [1,2,3,4,5,6,7,8,9,10];
+    let r = sum_of_squares(&v);
+    println!("{}", r);
+
+    let mut v = [1,2,3,4,5,6,7,8,9,10];
+    increment_all(&mut v);
+    println!("{:?}", v);
+
+
     {
         // let i: i32 = rand::thread_rng().gen_range(1, 101);
         // println!("生成的数字是:{}", i);
