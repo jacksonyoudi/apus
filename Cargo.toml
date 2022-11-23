@@ -17,6 +17,13 @@ members = [
     "vectortype",
     "oop",
     "multithread",
+<<<<<<< HEAD
     "csp"
+=======
+    "generics",
+    "csp",
+    "pow",
+    "thread_pool"
+>>>>>>> f274eb170fdec9ad278b422ec99417322e26c96a
 ]
 
