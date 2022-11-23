@@ -17,6 +17,7 @@ static DIFFICULTY: &'static str = "00000";
 
 struct Solution(usize, String);
 
+// 验证是否是有效的 hash值
 fn verify(number: usize) -> Option<Solution> {
     let mut hasher = Sha256::new();
     hasher.input_str(&(number * BASE).to_string());
