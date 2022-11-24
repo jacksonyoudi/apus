@@ -21,6 +21,7 @@ members = [
     "generics",
     "csp",
     "pow",
-    "thread_pool"
+    "thread_pool",
+    "reflect"
 ]
 
