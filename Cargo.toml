@@ -22,6 +22,6 @@ members = [
     "csp",
     "pow",
     "thread_pool",
-    "reflect"
+    "reflect",
 ]
 
